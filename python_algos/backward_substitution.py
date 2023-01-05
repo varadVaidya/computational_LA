@@ -1,7 +1,7 @@
 import numpy as np
 
 def backward_substitution(U, b):
-    
+    # assumes U as upper traingular matrix.s
     if min(abs(np.diag(U))) < 1e-6:
         return False
     
