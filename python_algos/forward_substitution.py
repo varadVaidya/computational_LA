@@ -22,3 +22,6 @@ L = np.array([
     []
 ])
 b = np.array([])
+
+x = forward_substitution(L,b)
+print("x is \n", x)
