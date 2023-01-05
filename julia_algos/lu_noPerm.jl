@@ -32,7 +32,7 @@ function lu_noPermutation(M)
     
 end
 
-@show M = [5 2;15 2]
+@show M = [-2 -4 -6;-2 1 -4;-2 11 -4]
 
 L, U = lu_noPermutation(M)
 

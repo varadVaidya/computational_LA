@@ -1,6 +1,6 @@
 import numpy as np
 
-def forward_substitution(L, b):
+def forwardsub(L, b):
     # assumes L as a lower triangluar matrix.
     if min(abs(np.diag(L))) < 1e-6:
         return False
@@ -15,12 +15,13 @@ def forward_substitution(L, b):
     
     return x
 
-L = np.array([
-    [3,0,0],
-    [2,-1,0],
-    [1,-2,3]
-])
-b = np.array([6,-2,2])
+if __name__ == '__main__':
+    L = np.array([
+        [3,0,0],
+        [2,-1,0],
+        [1,-2,3]
+    ])
+    b = np.array([6,-2,2])
 
-x = forward_substitution(L,b)
-print("x is \n", x)
+    x = forwardsub(L,b)
+    print("x is \n", x)

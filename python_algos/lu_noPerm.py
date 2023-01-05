@@ -2,7 +2,6 @@ import numpy as np
 
 def lu_noPermutation(M):
     temp_M = np.copy(M)
-    print(temp_M)
     n = len(temp_M)
     
     L = np.zeros((n,n))
@@ -11,7 +10,6 @@ def lu_noPermutation(M):
     for i in range(n):
         
         pivot = temp_M[i,i]
-        print("\n")
         if not np.isclose(pivot,0,atol=1e-6).any():
             C = temp_M[:,i]/pivot
             R = temp_M[i]
@@ -27,10 +25,11 @@ def lu_noPermutation(M):
     
     return L, U
 
-M = np.array([
-    [5,2],
-    [15,2]
-])
+if __name__ == "__main__":
+    M = np.array([
+        [5,2],
+        [15,2]
+    ])
 
-L,U = lu_noPermutation(M)
-print("L:", L ,"\n U",U)
+    L,U = lu_noPermutation(M)
+    print("L:", L ,"\n U",U)

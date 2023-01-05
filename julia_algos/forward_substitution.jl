@@ -3,7 +3,7 @@ using LinearAlgebra
 function forwardsub(L,b)
     # L is lower triangular matrix
 
-    if minimum(abs.(dig(U))) < 1e-6
+    if minimum(abs.(diag(L))) < 1e-6
         return false
     end
 
@@ -13,7 +13,7 @@ function forwardsub(L,b)
     x[1] = b[1]/L[1,1]
 
     for i = 2:n
-        x[i] = (b[i] - L[i,1:i+1]' * x[1:i+1])/L[i,i]
+        x[i] = (b[i] - L[i,1:i]' * x[1:i])/L[i,i]
     end
 
     return x
