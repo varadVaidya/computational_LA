@@ -20,7 +20,7 @@ function lu_noPermutation(M)
             L = [L C]
             U = [U;R]
 
-            @show temp_M = temp_M - C * R
+            temp_M = temp_M - C * R
 
         else
             println("M has 0 in its pivot")
@@ -32,9 +32,12 @@ function lu_noPermutation(M)
     
 end
 
-@show M = [-2 -4 -6;-2 1 -4;-2 11 -4]
+ if abspath(PROGRAM_FILE) == @__FILE__ 
 
-L, U = lu_noPermutation(M)
+    @show M = [-2 -4 -6;-2 1 -4;-2 11 -4]
 
-@show L
-@show U
+    L, U = lu_noPermutation(M)
+
+    @show L
+    @show U
+end

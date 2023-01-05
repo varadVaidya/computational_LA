@@ -18,8 +18,9 @@ function forwardsub(L,b)
 
     return x
 end
+if abspath(PROGRAM_FILE) == @__FILE__ 
+    L = [3 0 0;2 -1 0;1 -2 3]
+    b = [6,-2,2]
 
-L = [3 0 0;2 -1 0;1 -2 3]
-b = [6,-2,2]
-
-@show x = forwardsub(L,b)
+    @show x = forwardsub(L,b)
+end
