@@ -13,7 +13,7 @@ def solve_lineq(A, b):
     
     return x
         
-A = np.array([
+A = np.array([ 
     [-2,-4,-6],
     [-2,1,-4],
     [-2,11,-4]
